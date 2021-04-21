@@ -44,6 +44,9 @@
                 "endOfLine": "auto",
                 "printWidth": 80
             }
+        ],
+        "no-plusplus": ["error",
+            { "allowForLoopAfterthoughts": true }
         ]
     }
 }
