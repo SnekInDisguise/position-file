@@ -1,15 +1,21 @@
-import { writeFileSync, existsSync } from "fs";
+import { writeFileSync, existsSync, WriteFileOptions } from "fs";
+
 import getFilename from "./get-filename";
 
-const positionFile = (path: string, content: string) => {
+const positionFile = (
+  path: string,
+  // eslint-disable-next-line no-undef
+  data: string | NodeJS.ArrayBufferView,
+  options?: WriteFileOptions | undefined
+) => {
   const fileExists = existsSync(path);
 
   let filepath = path;
   if (fileExists) {
     filepath = getFilename(filepath);
-    positionFile(filepath, content);
+    positionFile(path, data, options);
   } else {
-    writeFileSync(filepath, content);
+    writeFileSync(filepath, data, options);
   }
 };
 
