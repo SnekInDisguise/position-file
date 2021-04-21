@@ -13,7 +13,7 @@ const positionFile = (
   let filepath = path;
   if (fileExists) {
     filepath = getFilename(filepath);
-    positionFile(path, data, options);
+    positionFile(filepath, data, options);
   } else {
     writeFileSync(filepath, data, options);
   }

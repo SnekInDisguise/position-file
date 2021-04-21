@@ -38,7 +38,8 @@ describe("Test for PositionFile", () => {
 
     expect(writeFileSync).toHaveBeenCalledWith(
       resolve("./my-file.txt"),
-      "content of my file"
+      "content of my file",
+      undefined
     );
   });
 
@@ -64,7 +65,8 @@ describe("Test for PositionFile", () => {
 
       expect(writeFileSync).toHaveBeenCalledWith(
         resolve(`./my-file (${expectedNumber}).txt`),
-        "content of my file"
+        "content of my file",
+        undefined
       );
     }
   );
